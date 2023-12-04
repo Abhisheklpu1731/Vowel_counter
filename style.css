@@ -5,101 +5,115 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to right, #2e0c1e, rgb(125, 108, 84));
-    }
+    margin: 0;
+}
 
-    .container {
-        background-color: rgba(141, 8, 8, 0.2);
-        backdrop-filter: blur(10px);
+.container {
+    background-color: rgba(141, 8, 8, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: neoGlow 1s infinite alternate;
+    max-width: 600px;
+    width: 80%;
+}
+
+@keyframes neoGlow {
+    from {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        animation: neoGlow 1s infinite alternate;
     }
 
-    @keyframes neoGlow {
-        from {
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    to {
+        box-shadow: 0px 0px 20px #e61380,
+        0px 0px 30px #1cce49,
+        0px 0px 40px #00ff2a;
+    }
+}
 
-        }
+h1 {
+    color: #ffffff;
+    font-family: cursive;
+    font-size: 30px;
+}
 
-        to {
-            box-shadow: 0px 0px 20px #e61380,
-            0px 0px 30px #1cce49,
-            0px 0px 40px #00ff2a;
+p1 {
+    font-size: 16px;
+    margin: 10px;
+    color: #bab3b7;
+    margin-bottom: 20px;
+    font-family: monospace;
+    text-align: center;
+}
 
-        }
+textarea {
+    width: 100%;
+    height: 200px;
+    margin: 10 auto;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    color: rgba(0, 0, 0);
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    resize: none;
+    animation: slideIn 1.5s ease;
+}
 
-
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 
-    h1 {
-        color: #ffffff;
-        font-family: cursive;
-        font-size: 50px;        
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    p1{
-        font-size:20px;
-        margin:10px;
-        color: #bab3b7 ;
-        margin-bottom: 20px;
-        font-family:monospace;
+button {
+    padding: 15px 30px;
+    background-color: #4caf50;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #33022b;
+}
+
+#result {
+    font-size: 16px;
+    margin-top: 20px;
+    color: azure;
+    font-weight: bold;
+    animation: neoGlow 1s infinite alternate;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
     }
 
     textarea {
-        width: 500px;
-        height: 350px;
-        margin: 10 auto;
-        margin-bottom: 10px;
-        display: block;
-        font-size: 24px;
-        padding: 20px;
-        color: rgba(0, 0, 0);
-        border: 1px solid #dddddd;
-        border-radius: 5px;
-        resize: none;
-        animation: slideIn 1.5s ease;
-    }
-
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        width: 100%;
+        height: 150px;
     }
 
     button {
-        padding: 15px 30px;
-        background-color: #4caf50;
-        width: 500px;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+        padding: 15px 20px;
     }
-
-    button:hover {
-        background-color: #33022b;
-
-    }
-
-    #result {
-        font-size: 20px;
-        margin-top: 20px;
-        color: azure;
-        font-weight: bold;
-        animation: neoGlow 1s infinite alternate;
-
-    }
+}
